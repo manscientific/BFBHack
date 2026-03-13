@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 # Ignore everything
-*
+
 
 # But keep the gitignore itself
 # dependencies
