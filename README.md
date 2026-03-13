@@ -11,7 +11,6 @@
 - [Overview](#-overview)
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
 - [Prerequisites](#-prerequisites)
 - [Installation Guide](#-installation-guide)
 - [Environment Variables](#-environment-variables) 
@@ -82,29 +81,7 @@
 - **Scheduling**: APScheduler
 - **Deployment**: Railway.app
 
-## 🏗️ Project Structure
 
-```
-agritech-ai/
-├── 📁 frontend/                 # React.js application
-│   ├── src/
-│   ├── public/
-│   └── package.json
-│
-├── 📁 backend/                  # Node.js server
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   └── package.json
-│       .......
-├── 📁 python-backend/           # ML & AI services
-│   ├── requirements.txt
-│   └── main.py
-│
-└── 📁 python-backend-2/  # Weather alert service
-    ├── requirements.txt
-    └── main1.py
-```
 
 ## 📋 Prerequisites
 
