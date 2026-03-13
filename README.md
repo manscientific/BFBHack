@@ -1,20 +1,11 @@
-Here's the redesigned README.md with only environment variable names (no values):
+
 
 ```markdown
 # 🌾 AgriTech AI - Smart Farming Assistant
 
-<p align="center">
-  <img src="https://via.placeholder.com/1200x300/2ecc71/ffffff?text=AgriTech+AI+-+Smart+Farming+Assistant" alt="AgriTech AI Banner"/>
-</p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
-  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" />
-  <img src="https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white" />
-</p>
+
+
 
 ## 📋 Table of Contents
 - [Overview](#-overview)
@@ -23,8 +14,7 @@ Here's the redesigned README.md with only environment variable names (no values)
 - [Project Structure](#-project-structure)
 - [Prerequisites](#-prerequisites)
 - [Installation Guide](#-installation-guide)
-- [Environment Variables](#-environment-variables)
-- [API Documentation](#-api-documentation)
+- [Environment Variables](#-environment-variables) 
 - [Deployment](#-deployment)
 - [Contributing](#-contributing)
 - [License](#-license)
@@ -106,16 +96,14 @@ agritech-ai/
 │   ├── models/
 │   ├── routes/
 │   └── package.json
-│
+│       .......
 ├── 📁 python-backend/           # ML & AI services
-│   ├── models/
-│   ├── services/
 │   ├── requirements.txt
-│   └── app.py
+│   └── main.py
 │
-└── 📁 python-backend-railways/  # Weather alert service
+└── 📁 python-backend-2/  # Weather alert service
     ├── requirements.txt
-    └── app.py
+    └── main1.py
 ```
 
 ## 📋 Prerequisites
@@ -221,31 +209,7 @@ FRONTEND_URL=http://localhost:3000
 - No local `.env` file required
 - Configure environment variables directly in Railway dashboard
 
-## 📚 API Documentation
 
-### Node.js Backend Endpoints
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| POST | `/api/auth/register` | User registration | No |
-| POST | `/api/auth/login` | User login | No |
-| GET | `/api/crops` | Get crop recommendations | Yes |
-| POST | `/api/chat` | Chatbot interactions | Yes |
-| GET | `/api/user/profile` | Get user profile | Yes |
-| PUT | `/api/user/update` | Update user details | Yes |
-
-### Python ML Backend Endpoints
-| Method | Endpoint | Description | Input |
-|--------|----------|-------------|-------|
-| POST | `/api/detect-disease` | Detect leaf disease | Image file |
-| GET | `/api/soil-analysis` | Soil-based advisory | Soil parameters |
-| POST | `/api/chatbot` | Multilingual queries | Text query |
-
-### Weather Alert Service Endpoints
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/subscribe-weather` | Subscribe to alerts |
-| GET | `/api/weather/:location` | Get current weather |
-| DELETE | `/api/unsubscribe` | Unsubscribe from alerts |
 
 ## ☁️ Deployment
 
@@ -272,29 +236,7 @@ railway up
 ```
 4. Configure environment variables in Railway dashboard
 
-## 🎯 Usage Examples
 
-### Disease Detection
-```javascript
-// Frontend API call
-const formData = new FormData();
-formData.append('image', leafImage);
-const response = await axios.post(
-  `${process.env.REACT_APP_API_BASE_URL2}/api/detect-disease`,
-  formData
-);
-```
-
-### Weather Alert Subscription
-```javascript
-// Subscribe to weather alerts
-const subscribe = async (email, location) => {
-  await axios.post('https://your-railway-app.railway.app/api/subscribe-weather', {
-    email,
-    location
-  });
-};
-```
 
 ## 🤝 Contributing Guidelines
 
@@ -373,13 +315,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   © 2024 AgriTech AI. All rights reserved.
 </p>
 ```
-
-This redesigned README features:
-- **Clean, professional layout** with emojis for visual appeal
-- **No actual environment variable values** - only variable names as placeholders
-- **Comprehensive sections** covering all aspects of the project
-- **Better organization** with table of contents
-- **Visual elements** like badges and section headers
-- **Detailed troubleshooting** section
-- **Clear API documentation** tables
-- **Professional formatting** throughout
