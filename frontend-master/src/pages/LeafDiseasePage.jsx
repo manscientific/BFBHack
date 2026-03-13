@@ -722,6 +722,69 @@ const LeafDiseasePage = () => {
             </div>
 
             <div style={styles.uploadSection}>
+              {/* Tips Section - Moved to top of upload area */}
+              <div style={{
+                ...styles.infoPanel,
+                marginBottom: "2rem",
+                padding: "1.5rem",
+                background: "linear-gradient(135deg, #f8fff9 0%, #e8f6f3 100%)",
+              }}>
+                <h3 style={{
+                  ...styles.infoTitle,
+                  fontSize: "1.25rem",
+                  marginBottom: "1rem",
+                }}>
+                  <span>💡</span>
+                  Tips for Best Results
+                </h3>
+                
+                <div style={styles.tipsList}>
+                  <div style={styles.tipItem}>
+                    <div style={styles.tipIcon}>1</div>
+                    <div style={styles.tipContent}>
+                      <div style={styles.tipTitle}>Use Clear Images</div>
+                      <p style={styles.tipText}>
+                        Capture photos in good lighting with the leaf centered and in focus.
+                        Avoid blurry or dark images.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div style={styles.tipItem}>
+                    <div style={styles.tipIcon}>2</div>
+                    <div style={styles.tipContent}>
+                      <div style={styles.tipTitle}>Focus on Affected Areas</div>
+                      <p style={styles.tipText}>
+                        Ensure the diseased or discolored parts of the leaf are clearly visible.
+                        Include both affected and healthy areas for better diagnosis.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div style={styles.tipItem}>
+                    <div style={styles.tipIcon}>3</div>
+                    <div style={styles.tipContent}>
+                      <div style={styles.tipTitle}>Multiple Angles</div>
+                      <p style={styles.tipText}>
+                        For best results, upload images from different angles showing both
+                        sides of the leaf (top and bottom surfaces).
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div style={styles.tipItem}>
+                    <div style={styles.tipIcon}>4</div>
+                    <div style={styles.tipContent}>
+                      <div style={styles.tipTitle}>Regular Monitoring</div>
+                      <p style={styles.tipText}>
+                        Monitor your plants regularly and upload new images as symptoms
+                        progress to track disease development.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Upload Area */}
               <div
                 style={styles.uploadArea}
@@ -906,61 +969,13 @@ const LeafDiseasePage = () => {
             )}
           </div>
 
-          {/* Right Panel - Info & Tips */}
+          {/* Right Panel - Stats Only */}
           <div style={styles.infoPanel}>
-            <h3 style={styles.infoTitle}>
-              <span>💡</span>
-              Tips for Best Results
-            </h3>
-            
-            <div style={styles.tipsList}>
-              <div style={styles.tipItem}>
-                <div style={styles.tipIcon}>1</div>
-                <div style={styles.tipContent}>
-                  <div style={styles.tipTitle}>Use Clear Images</div>
-                  <p style={styles.tipText}>
-                    Capture photos in good lighting with the leaf centered and in focus.
-                    Avoid blurry or dark images.
-                  </p>
-                </div>
-              </div>
-              
-              <div style={styles.tipItem}>
-                <div style={styles.tipIcon}>2</div>
-                <div style={styles.tipContent}>
-                  <div style={styles.tipTitle}>Focus on Affected Areas</div>
-                  <p style={styles.tipText}>
-                    Ensure the diseased or discolored parts of the leaf are clearly visible.
-                    Include both affected and healthy areas for better diagnosis.
-                  </p>
-                </div>
-              </div>
-              
-              <div style={styles.tipItem}>
-                <div style={styles.tipIcon}>3</div>
-                <div style={styles.tipContent}>
-                  <div style={styles.tipTitle}>Multiple Angles</div>
-                  <p style={styles.tipText}>
-                    For best results, upload images from different angles showing both
-                    sides of the leaf (top and bottom surfaces).
-                  </p>
-                </div>
-              </div>
-              
-              <div style={styles.tipItem}>
-                <div style={styles.tipIcon}>4</div>
-                <div style={styles.tipContent}>
-                  <div style={styles.tipTitle}>Regular Monitoring</div>
-                  <p style={styles.tipText}>
-                    Monitor your plants regularly and upload new images as symptoms
-                    progress to track disease development.
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Stats */}
-            <div style={styles.statsGrid}>
+            <div style={{
+              ...styles.statsGrid,
+              marginTop: 0,
+            }}>
               <div style={styles.statItem}>
                 <div style={styles.statNumber}>95%</div>
                 <div style={styles.statLabel}>Accuracy Rate</div>

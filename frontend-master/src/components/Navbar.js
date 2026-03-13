@@ -4,12 +4,13 @@ import {
   
   FaUser, 
   FaSignOutAlt, 
-  FaTachometerAlt,
+  FaRobot,
   FaHistory,
   FaSeedling,
   FaCloudSun,
   FaBars,
-  FaTimes
+  FaTimes,
+  FaLeaf
 } from "react-icons/fa";
 
 import styles from "./Navbar.module.css";
@@ -52,12 +53,12 @@ const Navbar = ({ farmer, onLogout }) => {
         {/* Desktop Navigation Links */}
         <div className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ''}`}>
           <Link 
-            to="/dashboard" 
-            className={`${styles.navLink} ${isActive('/dashboard') ? styles.active : ''}`}
+            to="/chatbot" 
+            className={`${styles.navLink} ${isActive('/chatbot') ? styles.active : ''}`}
             onClick={closeMenu}
           >
-            <FaTachometerAlt className={styles.linkIcon} />
-            <span>Dashboard</span>
+            <FaRobot className={styles.linkIcon} />
+            <span>Chatbot</span>
           </Link>
           
           <Link 
@@ -80,12 +81,12 @@ const Navbar = ({ farmer, onLogout }) => {
           
           {farmer && (
             <Link 
-              to="/profile" 
-              className={`${styles.navLink} ${isActive('/profile') ? styles.active : ''}`}
+              to="/leaf-disease" 
+              className={`${styles.navLink} ${isActive('/leaf-disease') ? styles.active : ''}`}
               onClick={closeMenu}
             >
-              <FaUser className={styles.linkIcon} />
-              <span>Profile</span>
+              <FaLeaf className={styles.linkIcon} />
+              <span>Leaf Disease</span>
             </Link>
           )}
         </div>

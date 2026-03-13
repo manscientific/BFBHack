@@ -17,6 +17,9 @@ import LeafDiseasePage from "./pages/LeafDiseasePage";
 // ⭐ NEW COMPONENT (Weather Popup)
 import WeatherAlertModal from "./components/WeatherAlertModal";
 
+// ⭐ NEW COMPONENT (Screen Reader)
+import ScreenReader from "./components/ScreenReader";
+
 // ⭐ Node backend API
 import API from "./components/api";
 
@@ -106,6 +109,7 @@ function MainApp() {
             <>
               <Route path="/" element={<AdvisoryForm farmer={farmer} />} />
               <Route path="/crop-advice/:cropName" element={<CropAdvicePage />} />
+              <Route path="/chatbot" element={<ChatBotWidget fullPage={true} />} />
               <Route path="/leaf-disease" element={<LeafDiseasePage />} />
               <Route path="/history" element={<HistoryPage />} />
               <Route path="*" element={<Navigate to="/" />} />
@@ -139,7 +143,7 @@ function MainApp() {
           </button>
 
           {/* ⭐ LEAF DISEASE BUTTON */}
-          <button
+          {/* <button
             onClick={() => window.location.href = "/leaf-disease"}
             style={{
               marginBottom: "10px",
@@ -154,10 +158,10 @@ function MainApp() {
             }}
           >
             🌿 Leaf Disease Detector
-          </button>
+          </button> */}
 
           {/* Chatbot */}
-          <ChatBotWidget />
+          {/* <ChatBotWidget /> */}
         </div>
       )}
 
@@ -166,6 +170,8 @@ function MainApp() {
         <WeatherAlertModal onClose={() => setShowWeatherPopup(false)} />
       )}
 
+      {/* ⭐ SCREEN READER TOOL (Always visible) */}
+      <ScreenReader />
     </div>
   );
 }

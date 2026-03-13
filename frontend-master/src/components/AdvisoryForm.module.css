@@ -308,13 +308,41 @@
 
 .input {
   width: 100%;
-  padding: 1rem 1rem 1rem 3rem;
+  padding: 1rem 5.5rem 1rem 3rem;
   background-color: var(--color-gray-50);
   border: 2px solid var(--color-gray-200);
   border-radius: var(--radius-xl);
   font-size: 1rem;
   color: var(--color-gray-900);
   transition: all 0.3s ease;
+}
+
+.detectButton {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-emerald-500);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.detectButton:hover:not(:disabled) {
+  background: var(--color-emerald-600);
+}
+
+.detectButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .input:focus {

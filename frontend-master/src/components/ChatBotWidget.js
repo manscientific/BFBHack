@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import API from "../api";
 
-const ChatBotWidget = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const ChatBotWidget = ({ fullPage = false }) => {
+  const [isOpen, setIsOpen] = useState(fullPage); // Start open if fullPage
   const [messages, setMessages] = useState([
     { sender: "bot", text: "Hello! I can help you with crops, weather & farming 🌾" },
   ]);
@@ -10,6 +11,7 @@ const ChatBotWidget = () => {
   const [isRecording, setIsRecording] = useState(false);
 
   const recognitionRef = useRef(null);
+  const navigate = useNavigate();
 
   // ---------- INITIALIZE SPEECH RECOGNITION ----------
   useEffect(() => {
@@ -95,17 +97,22 @@ const ChatBotWidget = () => {
 
   return (
     <>
-      {/* Floating Chat Icon */}
-      <div className="chatbot-button" onClick={() => setIsOpen(!isOpen)}>
-        💬
-      </div>
+      {/* Floating Chat Icon - Only show when not fullPage */}
+      {!fullPage && (
+        <div className="chatbot-button" onClick={() => setIsOpen(!isOpen)}>
+          💬
+        </div>
+      )}
 
-      {/* Chat Window */}
-      {isOpen && (
-        <div className="chatbot-window">
+      {/* Chat Window - Always show when fullPage or when isOpen */}
+      {(fullPage || isOpen) && (
+        <div className={`chatbot-window ${fullPage ? 'fullpage' : ''}`}>
           <div className="chatbot-header">
             <span>Agri ChatBot 🤖</span>
-            <button className="close-btn" onClick={() => setIsOpen(false)}>
+            <button 
+              className="close-btn" 
+              onClick={() => fullPage ? navigate('/') : setIsOpen(false)}
+            >
               ×
             </button>
           </div>
@@ -176,6 +183,17 @@ const ChatBotWidget = () => {
           display: flex;
           flex-direction: column;
           z-index: 1000;
+        }
+
+        .chatbot-window.fullpage {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          border-radius: 0;
+          bottom: auto;
+          right: auto;
         }
 
         .chatbot-header {

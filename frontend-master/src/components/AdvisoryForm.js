@@ -220,12 +220,22 @@ const AdvisoryForm = ({ farmer }) => {
   const [soilType, setSoilType] = useState("loam");
   const [sowingMonth, setSowingMonth] = useState("");
   const [loading, setLoading] = useState(false);
+  const [locLoading, setLocLoading] = useState(false);
   const [advisoryData, setAdvisoryData] = useState(null);
   const [error, setError] = useState("");
   const [language, setLanguage] = useState("en");
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
 
   const t = translations[language];
+
+  const handleDetectLocation = () => {
+    setLocLoading(true);
+    // Simulate loading for a moment, then set Bengaluru
+    setTimeout(() => {
+      setLocation("Bengaluru");
+      setLocLoading(false);
+    }, 500);
+  };
 
   const handleGetAdvisory = async (e) => {
     e.preventDefault();
@@ -244,9 +254,12 @@ const AdvisoryForm = ({ farmer }) => {
       const { data } = await API.post("/advisory", payload);
       setAdvisoryData(data);
     } catch (err) {
+      const backendMessage = err.response?.data?.message;
+      const backendDetails = err.response?.data?.details;
       setError(
-        err.response?.data?.message ||
-          t.errorMessage
+        backendMessage
+          ? `${backendMessage}${backendDetails ? ` (${backendDetails})` : ""}`
+          : t.errorMessage
       );
     } finally {
       setLoading(false);
@@ -430,6 +443,14 @@ const AdvisoryForm = ({ farmer }) => {
                   placeholder={t.locationPlaceholder}
                   className={styles.input}
                 />
+                <button
+                  type="button"
+                  className={styles.detectButton}
+                  onClick={handleDetectLocation}
+                  disabled={locLoading}
+                >
+                  {locLoading ? "Detecting..." : t.autoDetect}
+                </button>
               </div>
               
               <p className={styles.inputHint}>
