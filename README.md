@@ -2,7 +2,7 @@
 
 ```markdown
 # 🌾 AgriTech AI - Smart Farming Assistant
-
+deployed link-- https://bfb-hack.vercel.app/
 
 
 
