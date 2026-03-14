@@ -129,7 +129,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Run the server
-python app.py
+python main.py
 ```
 The Python backend will be available at `http://localhost:8000`
 
