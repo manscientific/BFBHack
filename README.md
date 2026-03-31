@@ -2,7 +2,7 @@ I understand - the HTML/markdown formatting is showing as raw text instead of re
 
 ```markdown
 # 🌾 AgriTech AI - Smart Farming Assistant
-deployed link-- https://bfb-hack.vercel.app/
+
 
 ## 📋 Table of Contents
 - [Overview](#-overview)
